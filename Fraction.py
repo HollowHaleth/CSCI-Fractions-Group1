@@ -64,5 +64,5 @@ class Fraction(object):
             return 0
 
     def get_fraction(self):
-        #TODO
-        pass
+        positive_numerator = abs(int(self.get_numerator()))
+        positive_denominator = abs(int(self.get_denominator()))
