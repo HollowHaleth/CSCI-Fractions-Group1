@@ -11,6 +11,7 @@ class Fraction(object):
         # Integer Inputs
         if type(numerator) == int:
             self.numerator_holder = numerator
+            
             if type(denominator) == int:
                 self.denominator_holder = denominator
 
@@ -25,6 +26,9 @@ class Fraction(object):
 
             except:
                 None
+                
+        if self.denominator_holder == 0:
+            raise ZeroDivisionError
 
     def gcd(firstNumber, secondNumber):
         '''
