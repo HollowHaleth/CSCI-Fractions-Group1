@@ -7,12 +7,16 @@ class Fraction(object):
             if type(denominator) == int:
                 self.denominator_holder = denominator
 
-
-        elif type(numerator)== str:
+        elif type(numerator)== str and numerator.count("/") <= 1:
             try:
                 numerator = numerator.strip()
                 self.numerator_holder = int(numerator.split("/")[0])
-                self.denominator_holder = int(numerator.split("/")[1])
+                
+                if numerator.count("/") == 1 and numerator.split("/")[1] != "":
+                    self.denominator_holder = int(numerator.split("/")[1])
+                else:
+                    self.numerator_holder = 0
+                    self.denominator_holder = 1
 
             except:
                 self.numerator_holder = 0
