@@ -50,8 +50,11 @@ class Fraction(object):
                     return i
 
     def get_numerator(self):
-        #TODO
-        pass
+        try:
+            # Simplified Numerator
+            return f"{int(self.numerator / Fraction.gcd(self.numerator,self.denominator)) }"
+        except:
+            return 0
 
     def get_denominator(self):
         #TODO
