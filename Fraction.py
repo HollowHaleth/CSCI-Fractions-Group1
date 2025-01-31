@@ -52,14 +52,14 @@ class Fraction(object):
     def get_numerator(self):
         try:
             # Simplified Numerator
-            return f"{int(self.numerator / Fraction.gcd(self.numerator,self.denominator)) }"
+            return f"{int(self.numerator_holder / Fraction.gcd(self.numerator_holder,self.denominator_holder)) }"
         except:
             return 0
 
     def get_denominator(self):
         try:
             # Simplified Denominator
-            return f"{int(self.denominator / Fraction.gcd(self.numerator,self.denominator))}"
+            return f"{int(self.denominator_holder / Fraction.gcd(self.numerator_holder,self.denominator_holder))}"
         except:
             return 0
 
@@ -67,12 +67,12 @@ class Fraction(object):
         positive_numerator = abs(int(self.get_numerator()))
         positive_denominator = abs(int(self.get_denominator()))
 
-        if self.denominator == 1:
-            return f"{self.numerator}"
+        if self.denominator_holder == 1:
+            return f"{self.numerator_holder}"
         else:
-            if (self.numerator < 0 and self.denominator < 0) or \
-            (self.numerator > 0 and self.denominator > 0):
+            if (self.numerator_holder < 0 and self.denominator_holder < 0) or \
+            (self.numerator_holder > 0 and self.denominator_holder > 0):
                 return f"{positive_numerator}/{positive_denominator}"
-            elif(self.numerator > 0 and self.denominator < 0) or \
-            (self.numerator < 0 and self.denominator > 0):
+            elif(self.numerator_holder > 0 and self.denominator_holder < 0) or \
+            (self.numerator_holder < 0 and self.denominator_holder > 0):
                 return f"-{positive_numerator}/{positive_denominator}"
