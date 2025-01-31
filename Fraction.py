@@ -73,3 +73,6 @@ class Fraction(object):
             if (self.numerator < 0 and self.denominator < 0) or \
             (self.numerator > 0 and self.denominator > 0):
                 return f"{positive_numerator}/{positive_denominator}"
+            elif(self.numerator > 0 and self.denominator < 0) or \
+            (self.numerator < 0 and self.denominator > 0):
+                return f"-{positive_numerator}/{positive_denominator}"
