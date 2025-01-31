@@ -66,3 +66,10 @@ class Fraction(object):
     def get_fraction(self):
         positive_numerator = abs(int(self.get_numerator()))
         positive_denominator = abs(int(self.get_denominator()))
+
+        if self.denominator == 1:
+            return f"{self.numerator}"
+        else:
+            if (self.numerator < 0 and self.denominator < 0) or \
+            (self.numerator > 0 and self.denominator > 0):
+                return f"{positive_numerator}/{positive_denominator}"
