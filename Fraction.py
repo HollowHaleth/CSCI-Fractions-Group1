@@ -4,7 +4,8 @@ class Fraction(object):
         
         if type(numerator) == int:
             self.numerator_holder = numerator
-            self.denominator_holder = denominator
+            if type(denominator) == int:
+                self.denominator_holder = denominator
 
 
         elif type(numerator)== str:
