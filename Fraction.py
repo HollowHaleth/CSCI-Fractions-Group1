@@ -9,9 +9,14 @@ class Fraction(object):
 
 
         elif type(numerator)== str:
-            numerator = numerator.strip()
-            self.numerator_holder = int(numerator.split("/")[0])
-            self.denominator_holder = int(numerator.split("/")[1])
+            try:
+                numerator = numerator.strip()
+                self.numerator_holder = int(numerator.split("/")[0])
+                self.denominator_holder = int(numerator.split("/")[1])
+
+            except:
+                self.numerator_holder = 0
+                self.denominator_holder = 1
 
     def gcd(firstNumber, secondNumber):
         '''
