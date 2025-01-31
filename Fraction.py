@@ -1,8 +1,16 @@
 class Fraction(object):
 
     def __init__(self, numerator=0, denominator=1):
-        #TODO
-        pass
+        
+        if type(numerator) == int:
+            self.numerator_holder = numerator
+            self.denominator_holder = denominator
+
+
+        elif type(numerator)== str:
+            numerator = numerator.strip()
+            self.numerator_holder = int(numerator.split("/")[0])
+            self.denominator_holder = int(numerator.split("/")[1])
 
     def gcd(firstNumber, secondNumber):
         '''
