@@ -1,8 +1,34 @@
 class Fraction(object):
 
     def __init__(self, numerator=0, denominator=1):
-        #TODO
-        pass
+        '''
+        Initialize numerator and denominator
+        '''
+
+        self.numerator_holder = 0
+        self.denominator_holder = 1
+        
+        # Integer Inputs
+        if type(numerator) == int:
+            self.numerator_holder = numerator
+            
+            if type(denominator) == int:
+                self.denominator_holder = denominator
+
+        # String Inputs
+        elif type(numerator)== str and numerator.count("/") <= 1:
+            try:
+                numerator = numerator.strip()
+                self.numerator_holder = int(numerator.split("/")[0])
+                
+                if numerator.count("/") == 1 and numerator.split("/")[1] != "":
+                    self.denominator_holder = int(numerator.split("/")[1])
+
+            except:
+                None
+                
+        if self.denominator_holder == 0:
+            raise ZeroDivisionError
 
     def gcd(firstNumber, secondNumber):
         '''
